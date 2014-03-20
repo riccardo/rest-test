@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    /**
+    TEST
+    */
+
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.rictomasi</groupId>
+	<artifactId>osgiservice.core</artifactId>
+	<packaging>bundle</packaging>
+	<version>0.0.1</version>
+	<name>OSGi Service core</name>
+
+	<parent>
+		<groupId>org.rictomasi</groupId>
+		<artifactId>osgiservice</artifactId>
+		<version>0.0.1</version>
+	</parent>
+
+	<properties>
+		<main.dir>${project.parent.basedir}</main.dir>
+	</properties>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+						<Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+						<Bundle-Name>${project.name}</Bundle-Name>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Bundle-Vendor>Telecom Italia</Bundle-Vendor>
+						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
+						<Bundle-Activator>org.energy_home.jemma.javagal.layers.presentation.Activator</Bundle-Activator>
+						<Import-Package> gnu.io;version="1.0.0",
+							org.slf4j,
+							org.osgi.framework,
+							org.osgi.util.tracker;version="1.4.2",*
+						</Import-Package>
+						<Export-Package>org.energy_home.jemma.zgd;version="1.4.1",
+							org.energy_home.jemma.zgd.jaxb;version="1.0.4"
+						</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>common</artifactId>
+			<version>${org.eclipse.equinox.common.version}</version>
+		</dependency>
+	</dependencies>
+</project>
+

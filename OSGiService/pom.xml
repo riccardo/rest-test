@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    /**
+    TEST
+    */
+
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.rictomasi</groupId>
+	<artifactId>osgiservice</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1</version>
+	<name>osgiservice</name>
+
+	<properties>
+		<main.dir>${project.basedir}</main.dir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<felix.bundle.plugin.version>2.4.0</felix.bundle.plugin.version>
+		<maven.license.plugin.version>2.6</maven.license.plugin.version>
+		<maven.clean.plugin.version>2.5</maven.clean.plugin.version>
+
+		<org.eclipse.equinox.common.version>3.6.200-v20130402-1505</org.eclipse.equinox.common.version>
+	</properties>
+
+	<modules>
+		<module>osgiservice.core</module>
+		<module>Distribution</module>
+	</modules>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>OSGI-INF/**</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>./src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+			    <groupId>org.apache.felix</groupId>
+			    <artifactId>maven-bundle-plugin</artifactId>
+			    <version>${felix.bundle.plugin.version}</version>
+			    <extensions>true</extensions>
+			    <configuration>
+				<supportedProjectTypes>
+				      <supportedProjectType>jar</supportedProjectType>
+				      <supportedProjectType>bundle</supportedProjectType>
+				      <supportedProjectType>war</supportedProjectType>
+			        </supportedProjectTypes>
+				<manifestLocation>META-INF</manifestLocation>
+				<instructions>
+				    <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+				    <!--<DynamicImport-Package>com.sun.xml.internal.bind.*</DynamicImport-Package>-->
+				    <Bundle-ClassPath>{maven-dependencies}</Bundle-ClassPath>
+				</instructions>
+			    </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+				    <source>1.6</source>
+				    <target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/assemble/bin.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<version>${maven.license.plugin.version}</version>
+				<configuration>
+					<header>header.txt</header>
+					<properties>
+						<owner>Telecom Italia</owner>
+						<year>2010</year>
+					</properties>
+					<useDefaultExcludes>true</useDefaultExcludes>
+					<strictCheck>true</strictCheck>
+					<includes>
+						<include>**/*.java</include>
+						<include>**/*.xml</include>
+					<!-- 	When add an header to a xml schema the jaxb cannot parses it
+					<include>**/*.xsd</include> 		
+					-->					
+					</includes>
+					 <excludes>
+						<exclude>**/README</exclude>
+						<exclude>src/test/resources/**</exclude>
+					</excludes>  
+				</configuration>
+				<executions>
+					<execution>
+						<id>headers-add-and-check-package</id>
+						<phase>package</phase>
+						<goals>
+							<goal>format</goal>                    
+							<goal>check</goal>
+						</goals>
+					</execution>
+					 <execution>
+						<id>headers-add-and-check-clean</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>format</goal>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>${maven.clean.plugin.version}</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${project.basedir}</directory>
+							<includes>
+								<include>.settings/</include>
+								<include>.project</include>
+								<include>.classpath</include>
+								<include>bin/</include>
+								<include>META-INF/</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+					<verbose>true</verbose>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>localRepository</id>
+			<name>Local repository</name>
+			<url>http://130.192.85.149:8888/maven</url>
+		</repository>
+		<repository>
+			<id>maven-Jaxb</id>
+			<name>JAXB-NamespacePrefixMapper-Interfaces</name>
+			<url>http://mvnrepository.com/</url>
+		</repository>
+		<repository>
+		   <id>maven-restlet</id>  
+		   <name>Public online Restlet repository</name>  
+		   <url>http://maven.restlet.org</url>  
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>common</artifactId>
+			<version>${org.eclipse.equinox.common.version}</version>
+		</dependency>
+	</dependencies>
+</project>
+
+
