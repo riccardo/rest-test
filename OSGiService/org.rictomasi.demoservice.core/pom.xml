@@ -41,7 +41,8 @@
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
 						<Bundle-Activator>org.rictomasi.demoservice.core.activator.Activator</Bundle-Activator>
 						<Import-Package>org.osgi.framework,
-						org.osgi.service.component,*
+						org.osgi.service.component,
+						org.slf4j,*
 						</Import-Package>
 						<Export-Package>org.rictomasi.demoservice.core.api
 						</Export-Package>

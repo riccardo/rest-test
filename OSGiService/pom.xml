@@ -4,26 +4,6 @@
     Test
 
 -->
-<!--
-
-    /**
-    Test
-    */
-
--->
-<!--
-
-
-
--->
-<!--
-
-    /**
-    TEST
-    */
-
--->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -44,6 +24,12 @@
 		<org.eclipse.equinox.common.version>3.6.200-v20130402-1505</org.eclipse.equinox.common.version>
 		<org.osgi.core.version>5.0.0</org.osgi.core.version>
 		<org.osgi.compendium.version>5.0.0</org.osgi.compendium.version>
+		<org.slf4j.version>1.7.6</org.slf4j.version>
+		<org.ops4j.pax.logging.version>1.7.2</org.ops4j.pax.logging.version>
+		<org.eclipse.osgi.version>3.8.0.v20120529-1548</org.eclipse.osgi.version>
+		<org.eclipse.equinox.ds.version>1.1.1</org.eclipse.equinox.ds.version>
+		<org.eclipse.osgi.util.version>3.2.100.v20100503</org.eclipse.osgi.util.version>	
+		<org.eclipse.equinox.util.version>1.0.100</org.eclipse.equinox.util.version>
 	</properties>
 
 	<modules>
@@ -112,8 +98,8 @@
 				<configuration>
 					<header>header.txt</header>
 					<properties>
-						<owner>Telecom Italia</owner>
-						<year>2010</year>
+						<owner>Riccardo</owner>
+						<year>2014</year>
 					</properties>
 					<useDefaultExcludes>true</useDefaultExcludes>
 					<strictCheck>true</strictCheck>
@@ -189,7 +175,47 @@
 		</repository>
 	</repositories>
 	<dependencies>
-
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>org.eclipse.osgi</artifactId>
+			<version>${org.eclipse.osgi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.osgi</groupId>
+			<artifactId>org.eclipse.osgi.util</artifactId>
+			<version>${org.eclipse.osgi.util.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.ds</artifactId>
+			<version>${org.eclipse.equinox.ds.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.equinox</groupId>
+			<artifactId>org.eclipse.equinox.util</artifactId>
+			<version>${org.eclipse.equinox.util.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${org.slf4j.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+		    <version>${org.slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ops4j.pax.logging</groupId>
+			<artifactId>pax-logging-api</artifactId>
+			<version>${org.ops4j.pax.logging.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ops4j.pax.logging</groupId>
+			<artifactId>pax-logging-service</artifactId>
+			<version>${org.ops4j.pax.logging.version}</version>
+		</dependency>
+            
 	</dependencies>
 </project>
 

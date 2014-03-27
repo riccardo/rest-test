@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+
+<target name="Demoservice" sequenceNumber="1">
+<locations>
+<location path="${resource_loc:/org.rictomasi.demoservice.Distribution}/target/org.rictomasi.demoservice.Distribution-0.0.1-bin/modules/dependencies" type="Directory"/>
+</locations>
+</target>
+
