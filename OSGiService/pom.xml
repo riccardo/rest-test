@@ -43,6 +43,7 @@
 
 		<org.eclipse.equinox.common.version>3.6.200-v20130402-1505</org.eclipse.equinox.common.version>
 		<org.osgi.core.version>5.0.0</org.osgi.core.version>
+		<org.osgi.compendium.version>5.0.0</org.osgi.compendium.version>
 	</properties>
 
 	<modules>

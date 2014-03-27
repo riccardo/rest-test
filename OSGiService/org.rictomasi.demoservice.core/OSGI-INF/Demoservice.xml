@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Test
+
+-->
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="org.rictomasi.demoservice.core">
+   <implementation class="org.rictomasi.demoservice.core.impl.DemoServiceImpl"/>
+   <service>
+      <provide interface="org.rictomasi.demoservice.core.api.DemoService"/>
+   </service>
+</scr:component>
