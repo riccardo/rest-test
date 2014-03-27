@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
+    Test
+
+-->
+<!--
+
+
+
+-->
+<!--
+
     /**
     TEST
     */
@@ -13,7 +23,7 @@
   
 	<parent>
 		<groupId>org.rictomasi</groupId>
-		<artifactId>osgiservice</artifactId>
+		<artifactId>org.rictomasi.demoservice</artifactId>
 		<version>0.0.1</version>
 	</parent>
   
@@ -23,7 +33,7 @@
   
 	<name>OSGi Service Distribution</name>
 	<groupId>org.rictomasi</groupId>
-	<artifactId>osgiservice.Distribution</artifactId>
+	<artifactId>org.rictomasi.demoservice.Distribution</artifactId>
 	<packaging>jar</packaging>
 
 	<build>

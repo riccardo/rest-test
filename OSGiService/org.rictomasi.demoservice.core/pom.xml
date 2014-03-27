@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    /**
-    TEST
-    */
+    Test
 
 -->
 
@@ -13,14 +11,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.rictomasi</groupId>
-	<artifactId>osgiservice.core</artifactId>
+	<artifactId>org.rictomasi.demoservice.core</artifactId>
 	<packaging>bundle</packaging>
 	<version>0.0.1</version>
 	<name>OSGi Service core</name>
 
 	<parent>
 		<groupId>org.rictomasi</groupId>
-		<artifactId>osgiservice</artifactId>
+		<artifactId>org.rictomasi.demoservice</artifactId>
 		<version>0.0.1</version>
 	</parent>
 
@@ -41,10 +39,10 @@
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Bundle-Vendor>Riccardo Tomasi</Bundle-Vendor>
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
-						<Bundle-Activator>org.rictomasi.osgiservice.core.activator.Activator</Bundle-Activator>
+						<Bundle-Activator>org.rictomasi.demoservice.core.activator.Activator</Bundle-Activator>
 						<Import-Package>org.osgi.framework,*
 						</Import-Package>
-						<Export-Package>org.rictomasi.osgiservice.core.api
+						<Export-Package>org.rictomasi.demoservice.core.api
 						</Export-Package>
 					</instructions>
 				</configuration>
@@ -55,9 +53,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.eclipse.equinox</groupId>
-			<artifactId>common</artifactId>
-			<version>${org.eclipse.equinox.common.version}</version>
+		    <groupId>org.osgi</groupId>
+		    <artifactId>org.osgi.core</artifactId>
+		    <version>${org.osgi.core.version}</version>
 		</dependency>
 	</dependencies>
 </project>

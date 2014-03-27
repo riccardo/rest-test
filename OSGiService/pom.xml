@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
+    Test
+
+-->
+<!--
+
+    /**
+    Test
+    */
+
+-->
+<!--
+
+
+
+-->
+<!--
+
     /**
     TEST
     */
@@ -11,8 +28,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.rictomasi</groupId>
-	<artifactId>osgiservice</artifactId>
-	<packaging>pom</packaging>
+	<artifactId>org.rictomasi.demoservice</artifactId>
+	<packaging>pom</packaging> 
 	<version>0.0.1</version>
 	<name>osgiservice</name>
 
@@ -25,11 +42,12 @@
 		<maven.clean.plugin.version>2.5</maven.clean.plugin.version>
 
 		<org.eclipse.equinox.common.version>3.6.200-v20130402-1505</org.eclipse.equinox.common.version>
+		<org.osgi.core.version>5.0.0</org.osgi.core.version>
 	</properties>
 
 	<modules>
-		<module>osgiservice.core</module>
-		<module>Distribution</module>
+		<module>org.rictomasi.demoservice.core</module>
+		<module>org.rictomasi.demoservice.Distribution</module>
 	</modules>
 
 	<build>
@@ -170,11 +188,7 @@
 		</repository>
 	</repositories>
 	<dependencies>
-		<dependency>
-			<groupId>org.eclipse.equinox</groupId>
-			<artifactId>common</artifactId>
-			<version>${org.eclipse.equinox.common.version}</version>
-		</dependency>
+
 	</dependencies>
 </project>
 
